@@ -49,7 +49,8 @@ namespace UnturnedAssets.Commands
                 .Select(x => new ItemAsset
                 {
                     ItemId = ushort.Parse(x.ItemAssetId),
-                    ItemName = x.ItemName
+                    ItemName = x.ItemName,
+                    ItemRarity = x.ItemAsset.rarity
                 }));
 
             var count = await _dbContext.SaveChangesAsync();
