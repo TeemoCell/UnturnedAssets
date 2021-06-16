@@ -1,0 +1,4 @@
+Commands:
+  UnturnedAssets:
+    Items: "Successfully wrote {Count} item asset entries to the database."
+    Vehicles: "Successfully wrote {Count} vehicle asset entries to the database."

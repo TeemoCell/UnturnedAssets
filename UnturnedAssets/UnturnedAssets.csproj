@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net461</TargetFramework>
+		<AssemblyName>UnturnedAssets</AssemblyName>
+		<Product>$(AssemblyName)</Product>
+		<RootNamespace>$(AssemblyName)</RootNamespace>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>SilK.UnturnedAssets</PackageId>
+		<PackageDescription>An OpenMod plugin for Unturned which uploads asset information to a given MySQL database.</PackageDescription>
+		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+		<PackageAuthor>Stephen White</PackageAuthor>
+		<PackageTags>openmod openmod-plugin unturned</PackageTags>
+		<Version>0.0.0</Version>
+		<RepositoryUrl>https://github.com/SilKsPlugins/UnturnedAssets</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<GenerateNugetPackage>true</GenerateNugetPackage>
+		<Authors>Stephen White</Authors>
+		<Copyright>Copyright © Stephen White 2021</Copyright>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<LangVersion>9.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<WarningsAsErrors>nullable</WarningsAsErrors>
+		<NoWarn>$(NoWarn);NU1701;NU1702;CS0436</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="config.yaml" />
+		<EmbeddedResource Include="translations.yaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.16">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net461" Version="1.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="OpenMod.Unturned" Version="3.0.34" />
+		<PackageReference Include="SilK.OpenMod.EntityFrameworkCore" Version="1.0.4" />
+	</ItemGroup>
+
+	<Target Name="ChangeAliasesOfNugetRefs" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
+		<ItemGroup>
+			<ReferencePath Condition="'%(FileName)' == 'JetBrains.Annotations'">
+				<Aliases>JetBrainsAnnotations</Aliases>
+			</ReferencePath>
+		</ItemGroup>
+	</Target>
+
+</Project>
