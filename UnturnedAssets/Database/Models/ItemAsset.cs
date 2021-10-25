@@ -1,6 +1,6 @@
-﻿using System;
+﻿using SDG.Unturned;
+using System;
 using System.ComponentModel.DataAnnotations;
-using SDG.Unturned;
 
 namespace UnturnedAssets.Database.Models
 {
@@ -11,6 +11,8 @@ namespace UnturnedAssets.Database.Models
         public ushort ItemId { get; set; }
 
         public string ItemName { get; set; } = "";
+
+        public string ItemDescription { get; set; } = "";
 
         public EItemRarity ItemRarity { get; set; }
     }
