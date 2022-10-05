@@ -25,17 +25,17 @@ namespace UnturnedAssets.Database
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<ItemAsset>()
-                .HasKey(x => x.GUID);
+                .HasKey(x => x.Id);
 
             modelBuilder.Entity<ItemAsset>()
-                .Property(x => x.GUID)
+                .Property(x => x.Id)
                 .ValueGeneratedNever();
 
             modelBuilder.Entity<VehicleAsset>()
-                .HasKey(x => x.GUID);
+                .HasKey(x => x.VehicleId);
 
             modelBuilder.Entity<VehicleAsset>()
-                .Property(x => x.GUID)
+                .Property(x => x.VehicleId)
                 .ValueGeneratedNever();
         }
     }

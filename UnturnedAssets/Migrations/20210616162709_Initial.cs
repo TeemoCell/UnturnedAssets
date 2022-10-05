@@ -22,7 +22,7 @@ namespace UnturnedAssets.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UnturnedAssets_ItemAssets", x => x.GUID);
+                    table.PrimaryKey("PK_UnturnedAssets_ItemAssets", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -35,7 +35,7 @@ namespace UnturnedAssets.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UnturnedAssets_VehicleAssets", x => x.GUID);
+                    table.PrimaryKey("PK_UnturnedAssets_VehicleAssets", x => x.VehicleId);
                 });
         }
 

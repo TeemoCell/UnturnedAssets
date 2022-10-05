@@ -43,7 +43,7 @@ namespace UnturnedAssets.Migrations
                     b.Property<string>("Path")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.HasKey("GUID");
+                    b.HasKey("Id");
 
                     b.ToTable("UnturnedAssets_ItemAssets");
                 });
@@ -61,7 +61,7 @@ namespace UnturnedAssets.Migrations
                         .HasColumnType("varchar CHARACTER SET utf8mb4")
                         .HasMaxLength(128);
 
-                    b.HasKey("GUID");
+                    b.HasKey("VehicleId");
 
                     b.ToTable("UnturnedAssets_VehicleAssets");
                 });
