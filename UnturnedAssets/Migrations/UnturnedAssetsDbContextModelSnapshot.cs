@@ -11,7 +11,6 @@ namespace UnturnedAssets.Migrations
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
-#pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.16")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
@@ -30,13 +29,12 @@ namespace UnturnedAssets.Migrations
                         .HasMaxLength(128);
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<int>("Rarity")
                         .HasColumnType("int");
 
-                    b.Property<string>("ItemType")
+                    b.Property<string>("Type")
                         .HasColumnType("smallint CHARACTER SET utf8mb4");
                     
                     b.Property<string>("AssetType")
@@ -67,7 +65,6 @@ namespace UnturnedAssets.Migrations
 
                     b.ToTable("UnturnedAssets_VehicleAssets");
                 });
-#pragma warning restore 612, 618
         }
     }
 }

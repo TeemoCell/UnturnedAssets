@@ -52,7 +52,7 @@ namespace UnturnedAssets.Commands
                     Name = x.ItemName,
                     Rarity = x.ItemAsset.rarity,
                     Description = x.ItemAsset.itemDescription,
-                    ItemType = x.ItemAsset.type,
+                    Type = x.ItemAsset.type,
                     AssetType = x.ItemAsset.assetCategory,
                     Path = x.ItemAsset.getFilePath()
                 }));

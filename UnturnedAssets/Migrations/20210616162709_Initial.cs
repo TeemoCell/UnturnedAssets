@@ -13,17 +13,17 @@ namespace UnturnedAssets.Migrations
                 {
                     Id = table.Column<ushort>(nullable: false),
                     Name = table.Column<string>(nullable: false),
-                    GUID = table.Column<string>(nullable: false),
+                    GUID = table.Column<string>(maxLength: 128, nullable: false),
                     Description = table.Column<string>(nullable: false),
                     Rarity = table.Column<string>(nullable: false),
-                    ItemType = table.Column<string>(nullable: false),
+                    Type = table.Column<string>(nullable: false),
                     AssetType = table.Column<string>(nullable: false),
                     Path = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UnturnedAssets_ItemAssets", x => x.GUID);
-                }); ; ; ; ; ;
+                });
 
             migrationBuilder.CreateTable(
                 name: "UnturnedAssets_VehicleAssets",
@@ -31,7 +31,7 @@ namespace UnturnedAssets.Migrations
                 {
                     VehicleId = table.Column<ushort>(nullable: false),
                     VehicleName = table.Column<string>(nullable: false),
-                    GUID = table.Column<string>(nullable: false)
+                    GUID = table.Column<string>(maxLength: 128, nullable: false),
                 },
                 constraints: table =>
                 {

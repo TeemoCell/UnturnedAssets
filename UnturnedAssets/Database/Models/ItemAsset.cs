@@ -18,7 +18,7 @@ namespace UnturnedAssets.Database.Models
 
         public EItemRarity Rarity { get; set; }
 
-        public EItemType ItemType { get; set; }
+        public EItemType Type { get; set; }
 
         public EAssetType AssetType { get; set; }
 
