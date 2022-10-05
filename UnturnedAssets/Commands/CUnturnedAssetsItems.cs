@@ -45,13 +45,16 @@ namespace UnturnedAssets.Commands
             await _dbContext.Database.ExecuteSqlRawAsync($"TRUNCATE TABLE `{tableName}`;");
 
             await _dbContext.ItemAssets.AddRangeAsync(assets
-                .Where(x => !x.ItemAsset.isPro)
                 .Select(x => new ItemAsset
                 {
-                    ItemId = ushort.Parse(x.ItemAssetId),
-                    ItemName = x.ItemName,
-                    ItemRarity = x.ItemAsset.rarity,
-                    ItemDescription = x.ItemAsset.itemDescription
+                    Id = ushort.Parse(x.ItemAssetId),
+                    GUID = x.ItemAsset.GUID,
+                    Name = x.ItemName,
+                    Rarity = x.ItemAsset.rarity,
+                    Description = x.ItemAsset.itemDescription,
+                    ItemType = x.ItemAsset.type,
+                    AssetType = x.ItemAsset.assetCategory,
+                    Path = x.ItemAsset.getFilePath()
                 }));
 
             var count = await _dbContext.SaveChangesAsync();

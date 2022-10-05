@@ -47,7 +47,8 @@ namespace UnturnedAssets.Commands
             await _dbContext.VehicleAssets.AddRangeAsync(assets.Select(x => new VehicleAsset
             {
                 VehicleId = ushort.Parse(x.VehicleAssetId),
-                VehicleName = x.VehicleName
+                VehicleName = x.VehicleName,
+                GUID = x.VehicleAsset.GUID
             }));
 
             var count = await _dbContext.SaveChangesAsync();

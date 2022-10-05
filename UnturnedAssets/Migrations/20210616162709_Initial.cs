@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
+using SDG.Unturned;
 
 namespace UnturnedAssets.Migrations
 {
@@ -10,24 +11,31 @@ namespace UnturnedAssets.Migrations
                 name: "UnturnedAssets_ItemAssets",
                 columns: table => new
                 {
-                    ItemId = table.Column<ushort>(nullable: false),
-                    ItemName = table.Column<string>(nullable: false)
+                    Id = table.Column<ushort>(nullable: false),
+                    Name = table.Column<string>(nullable: false),
+                    GUID = table.Column<string>(nullable: false),
+                    Description = table.Column<string>(nullable: false),
+                    Rarity = table.Column<string>(nullable: false),
+                    ItemType = table.Column<string>(nullable: false),
+                    AssetType = table.Column<string>(nullable: false),
+                    Path = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UnturnedAssets_ItemAssets", x => x.ItemId);
-                });
+                    table.PrimaryKey("PK_UnturnedAssets_ItemAssets", x => x.GUID);
+                }); ; ; ; ; ;
 
             migrationBuilder.CreateTable(
                 name: "UnturnedAssets_VehicleAssets",
                 columns: table => new
                 {
                     VehicleId = table.Column<ushort>(nullable: false),
-                    VehicleName = table.Column<string>(nullable: false)
+                    VehicleName = table.Column<string>(nullable: false),
+                    GUID = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UnturnedAssets_VehicleAssets", x => x.VehicleId);
+                    table.PrimaryKey("PK_UnturnedAssets_VehicleAssets", x => x.GUID);
                 });
         }
 

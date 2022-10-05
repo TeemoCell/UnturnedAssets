@@ -18,21 +18,34 @@ namespace UnturnedAssets.Migrations
 
             modelBuilder.Entity("UnturnedAssets.Database.Models.ItemAsset", b =>
                 {
-                    b.Property<ushort>("ItemId")
+                    b.Property<ushort>("Id")
                         .HasColumnType("smallint unsigned");
 
-                    b.Property<string>("ItemDescription")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<string>("ItemName")
+                    b.Property<string>("GUID")
+                        .HasColumnType("varchar CHARACTER SET utf8mb4")
+                        .HasMaxLength(128);
+
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<int>("ItemRarity")
+                    b.Property<int>("Rarity")
                         .HasColumnType("int");
 
-                    b.HasKey("ItemId");
+                    b.Property<string>("ItemType")
+                        .HasColumnType("smallint CHARACTER SET utf8mb4");
+                    
+                    b.Property<string>("AssetType")
+                        .HasColumnType("text CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Path")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("GUID");
 
                     b.ToTable("UnturnedAssets_ItemAssets");
                 });
@@ -46,7 +59,11 @@ namespace UnturnedAssets.Migrations
                         .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.HasKey("VehicleId");
+                    b.Property<string>("GUID")
+                        .HasColumnType("varchar CHARACTER SET utf8mb4")
+                        .HasMaxLength(128);
+
+                    b.HasKey("GUID");
 
                     b.ToTable("UnturnedAssets_VehicleAssets");
                 });

@@ -10,5 +10,7 @@ namespace UnturnedAssets.Database.Models
         public ushort VehicleId { get; set; }
 
         public string VehicleName { get; set; } = "";
+
+        public Guid GUID { get; set; }
     }
 }

@@ -8,12 +8,20 @@ namespace UnturnedAssets.Database.Models
     public class ItemAsset
     {
         [Key]
-        public ushort ItemId { get; set; }
+        public ushort Id { get; set; }
 
-        public string ItemName { get; set; } = "";
+        public string Name { get; set; } = "";
 
-        public string ItemDescription { get; set; } = "";
+        public Guid GUID { get; set; }
 
-        public EItemRarity ItemRarity { get; set; }
+        public string Description { get; set; } = "";
+
+        public EItemRarity Rarity { get; set; }
+
+        public EItemType ItemType { get; set; }
+
+        public EAssetType AssetType { get; set; }
+
+        public string Path { get; set; } = "";
     }
 }
